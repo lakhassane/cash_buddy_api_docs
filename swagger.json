@@ -502,8 +502,8 @@
       }
     },
     "/api/pots/emergency-fund/set": {
-      "put": {
-        "summary": "Set or update emergency fund details",
+      "post": {
+        "summary": "Create an emergency fund",
         "tags": [
           "Pots"
         ],
@@ -523,9 +523,6 @@
                   "coverageMonths"
                 ],
                 "properties": {
-                  "potId": {
-                    "type": "string"
-                  },
                   "monthlyExpenses": {
                     "type": "number"
                   },
@@ -561,9 +558,6 @@
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "description": "Pot not found"
           },
           "500": {
             "description": "Server Error"
